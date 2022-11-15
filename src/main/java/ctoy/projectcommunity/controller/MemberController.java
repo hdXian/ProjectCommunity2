@@ -14,7 +14,13 @@ import java.util.Optional;
 
 @Controller
 public class MemberController {
-    public MemberService memberService;
+
+    public final MemberService memberService;
+
+    @Autowired
+    public MemberController(MemberService memberService) {
+        this.memberService = memberService;
+    }
 
     // 회원 가입
 //    @GetMapping(value = "/project/join")
@@ -59,6 +65,7 @@ public class MemberController {
 
     // longinForm에서 입력한 정보를 받아 로그인 성패여부 결정.
     @PostMapping(value = "/project/login")
+    @ResponseBody
     public String tryLogin(@RequestBody MemberForm form) {
         Optional<Member> tmp = memberService.memberName(form.getName());
 
