@@ -41,6 +41,7 @@ public class MemberController {
             res.addProperty("join_status", "overlap");
             return res.toString();
         } catch (Exception e) {
+            e.printStackTrace();
             JsonObject res = new JsonObject();
             res.addProperty("join_status", "unknownError");
             return res.toString();
