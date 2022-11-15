@@ -3,6 +3,7 @@ package ctoy.projectcommunity.service;
 import ctoy.projectcommunity.domain.Member;
 import ctoy.projectcommunity.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,7 +14,6 @@ import java.util.Optional;
 @Transactional
 public class MemberService {
 
-    @Autowired
     private final MemberRepository memberRepository;
 
     public MemberService(MemberRepository memberRepository) {
